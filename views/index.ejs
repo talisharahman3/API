@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>😂 Joke Generator</title>
-    <link rel="stylesheet" href="/style.css" />
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>😂 Joke Generator</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>😂 Random Joke Generator</h1>
-        <p>Click below to get a fresh joke!</p>
-        <button id="jokeBtn">Tell me a joke</button>
+  <div class="container">
+    <h1>😂 Random Joke Generator</h1>
+    <p>Click below to get a fresh joke!</p>
+    <button id="jokeBtn">Tell me a joke</button>
 
-        <div id="loading" class="loading" style="display:none;">
-            <div class="spinner"></div>
-            <p>Loading your joke...</p>
-        </div>
-
-        <div id="joke" class="joke"></div>
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>Loading your joke...</p>
     </div>
 
-    <script src="/script.js"></script>
+    <div id="joke" class="joke"></div>
+
+    <!-- 👇 Reaction buttons and ratings now inside the container 👇 -->
+    <div id="joke-container">
+      <div id="reaction-buttons">
+        <button onclick="rateJoke('😂')">😂</button>
+        <button onclick="rateJoke('😐')">😐</button>
+        <button onclick="rateJoke('🙄')">🙄</button>
+      </div>
+
+      <div id="ratings">
+        <p>😂: <span id="funny-count">0</span></p>
+        <p>😐: <span id="meh-count">0</span></p>
+        <p>🙄: <span id="groan-count">0</span></p>
+      </div>
+    </div>
+    <!-- 👆 End reaction area -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="/reactions.js"></script>
+  <script src="/script.js"></script>
 </body>
+
 </html>
