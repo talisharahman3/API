@@ -28,6 +28,16 @@ app.get("/joke", async (req, res) => {
   }
 });
 
+app.post('/rate', (req, res) => {
+  const { jokeId, emoji } = req.body;
+
+  // Save to database or log it
+  console.log(`Vote recorded: ${jokeId} => ${emoji}`);
+
+  res.sendStatus(200);
+});
+
+
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
